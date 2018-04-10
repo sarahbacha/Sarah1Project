@@ -1,0 +1,474 @@
+{
+  "generator-cedrus-api": {
+    "haveConfigFile": true,
+    "discover": {
+      "ask": false,
+      "apiConsumes": [
+        "application/json"
+      ],
+      "apiProduces": [
+        "application/json"
+      ]
+    },
+    "detail": {
+      "ask": false,
+      "isPublic": true,
+      "httpMethods": [
+        "get",
+        "put",
+        "post",
+        "patch",
+        "delete"
+      ],
+      "httpStatusCodes": [
+        "204",
+        "404",
+        "500"
+      ],
+      "versioning": {
+        "enabled": true,
+        "type": "uri",
+        "versionNumber": [
+          "v1"
+        ],
+        "uriOrder": "resourceFirst",
+        "contentTypeOrder": "applicationFirst",
+        "customHeaderName": "version"
+      },
+      "apiData": {
+        "returnDataType": "No"
+      },
+      "records": {
+        "limit": 10
+      },
+      "cache": {
+        "RedisEnable": false,
+        "RedisHost": "pub-redis-19334.dal-05.1.sl.garantiadata.com",
+        "RedisPort": "19334",
+        "RedisPassword": "zKvyYzznhsdvYwgq",
+        "RedisExpire": 180
+      },
+      "pagination": {
+        "PaginationEnable": true
+      },
+      "filter": {
+        "FilterEnable": false
+      },
+      "security": {
+        "enabled": false,
+        "type": "none"
+      },
+      "logging": {
+        "enabled": false
+      }
+    },
+    "deploy": {
+      "ask": false,
+      "apiApplicationType": "nodejs",
+      "openWhisk": {
+        "OpenWhiskEnable": false
+      },
+      "tls": {
+        "TLSEnable": false
+      },
+      "cloudFoundry": {
+        "appName": "",
+        "appMemory": ""
+      },
+      "javaOptions": {
+        "basePackage": "io.cedrus.apigen",
+        "packagingType": "jar",
+        "framework": [
+          "jaxrs",
+          "jaxrs"
+        ],
+        "springBootDeployment": "tomcat"
+      }
+    },
+    "multipleResources": {
+      "enabled": true,
+      "resources": [
+        {
+          "resourceName": "order",
+          "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"format\":\"\"},\"customer\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"format\":\"\"},\"name\":{\"type\":\"string\",\"format\":\"\"},\"address\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"format\":\"\"},\"zipCode\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"city\",\"zipCode\"]}},\"required\":[\"id\",\"name\",\"address\"]}},\"required\":[\"id\",\"customer\"]}",
+          "isPublic": true,
+          "httpMethods": [
+            "get",
+            "put",
+            "post",
+            "patch",
+            "delete"
+          ],
+          "httpStatusCodes": [
+            "204",
+            "404",
+            "500"
+          ],
+          "requireTestDataType": "Test Data",
+          "apiFakerMappingFileProvided": true,
+          "apiFakeMappingFileType": "object",
+          "apiFakerMappingFileLocation": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "customer": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string"
+                  },
+                  "name": {
+                    "type": "string"
+                  },
+                  "address": {
+                    "type": "object",
+                    "properties": {
+                      "city": {
+                        "type": "string",
+                        "faker": "address.city"
+                      },
+                      "zipCode": {
+                        "type": "string",
+                        "faker": "address.zipCode"
+                      }
+                    },
+                    "required": [
+                      "city",
+                      "zipCode"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "name",
+                  "address"
+                ]
+              }
+            },
+            "required": [
+              "id",
+              "customer"
+            ]
+          },
+          "apiFakerMappingJsonType": "Data Schema",
+          "recordsLimit": "5",
+          "requireQuery": false,
+          "whichParameter": null,
+          "queryParameters": {
+            "get": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "put": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "post": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "patch": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ],
+            "delete": [
+              {
+                "name": "revision",
+                "in": "header",
+                "description": "Needed Revision",
+                "required": true,
+                "type": "string",
+                "default": "R1"
+              }
+            ]
+          },
+          "fake_data": [
+            {
+              "id": "sint consectetur offici",
+              "customer": {
+                "id": "ali",
+                "name": "deserunt velit qui",
+                "address": {
+                  "city": "West Kaitlinport",
+                  "zipCode": "03641-0762"
+                }
+              }
+            },
+            {
+              "id": "incididunt ullamco dolor",
+              "customer": {
+                "id": "nulla",
+                "name": "mollit sunt in",
+                "address": {
+                  "city": "Pedroside",
+                  "zipCode": "07734"
+                }
+              }
+            },
+            {
+              "id": "fugiat consectetur commodo dolor eiusmod",
+              "customer": {
+                "id": "mollit esse amet pariatur",
+                "name": "la",
+                "address": {
+                  "city": "Priceberg",
+                  "zipCode": "19132-3807"
+                }
+              }
+            }
+          ]
+        }
+      ],
+      "testingMode": false
+    },
+    "javaOptions": {
+      "basePackage": "io.cedrus.apigen",
+      "packagingType": "jar",
+      "framework": [
+        "jaxrs",
+        "jaxrs"
+      ],
+      "springBootDeployment": "tomcat"
+    },
+    "apiOverview": {
+      "apiName": "order",
+      "apiBasePath": "/api",
+      "apiDescription": "This is sample API being generated by cedrus-api generator"
+    },
+    "dataInput": {
+      "dataInputType": "JSON Input"
+    },
+    "JSONExtraction": [
+      {
+        "resourceName": "order",
+        "jsonFilePath": "{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"format\":\"\"},\"customer\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"format\":\"\"},\"name\":{\"type\":\"string\",\"format\":\"\"},\"address\":{\"type\":\"object\",\"properties\":{\"city\":{\"type\":\"string\",\"format\":\"\"},\"zipCode\":{\"type\":\"string\",\"format\":\"\"}},\"required\":[\"city\",\"zipCode\"]}},\"required\":[\"id\",\"name\",\"address\"]}},\"required\":[\"id\",\"customer\"]}",
+        "isPublic": true,
+        "httpMethods": [
+          "get",
+          "put",
+          "post",
+          "patch",
+          "delete"
+        ],
+        "httpStatusCodes": [
+          "204",
+          "404",
+          "500"
+        ],
+        "requireTestDataType": "Test Data",
+        "apiFakerMappingFileProvided": true,
+        "apiFakeMappingFileType": "object",
+        "apiFakerMappingFileLocation": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "customer": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "type": "string",
+                      "faker": "address.city"
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "faker": "address.zipCode"
+                    }
+                  },
+                  "required": [
+                    "city",
+                    "zipCode"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "address"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "customer"
+          ]
+        },
+        "apiFakerMappingJsonType": "Data Schema",
+        "recordsLimit": "5",
+        "requireQuery": false,
+        "whichParameter": null,
+        "queryParameters": {
+          "get": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "put": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "post": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "patch": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ],
+          "delete": [
+            {
+              "name": "revision",
+              "in": "header",
+              "description": "Needed Revision",
+              "required": true,
+              "type": "string",
+              "default": "R1"
+            }
+          ]
+        },
+        "fake_data": [
+          {
+            "id": "sint consectetur offici",
+            "customer": {
+              "id": "ali",
+              "name": "deserunt velit qui",
+              "address": {
+                "city": "West Kaitlinport",
+                "zipCode": "03641-0762"
+              }
+            }
+          },
+          {
+            "id": "incididunt ullamco dolor",
+            "customer": {
+              "id": "nulla",
+              "name": "mollit sunt in",
+              "address": {
+                "city": "Pedroside",
+                "zipCode": "07734"
+              }
+            }
+          },
+          {
+            "id": "fugiat consectetur commodo dolor eiusmod",
+            "customer": {
+              "id": "mollit esse amet pariatur",
+              "name": "la",
+              "address": {
+                "city": "Priceberg",
+                "zipCode": "19132-3807"
+              }
+            }
+          }
+        ],
+        "jsonSchema": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "format": ""
+            },
+            "customer": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "format": ""
+                },
+                "name": {
+                  "type": "string",
+                  "format": ""
+                },
+                "address": {
+                  "type": "object",
+                  "properties": {
+                    "city": {
+                      "type": "string",
+                      "format": ""
+                    },
+                    "zipCode": {
+                      "type": "string",
+                      "format": ""
+                    }
+                  },
+                  "required": [
+                    "city",
+                    "zipCode"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "name",
+                "address"
+              ]
+            }
+          },
+          "required": [
+            "id",
+            "customer"
+          ]
+        }
+      }
+    ]
+  }
+}
